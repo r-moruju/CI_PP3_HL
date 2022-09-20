@@ -33,15 +33,20 @@ def get_answer():
     Get user input and and by comparing with question output
     return True or False
     """
+    global score
+    score = 0
     answer = input("Your answer is (Y/N): ")
     if answer.lower() == "y" and question_return:
         print("You answered right")
+        score += 1
         return True
     elif answer.lower() == "n" and not question_return:
         print("You answered right")
+        score += 1
         return True
     else:
-        print("Wrong answer")
+        print("Wrong answer\n")
+        print(f"You scored {score}")
         return False
         
 
