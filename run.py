@@ -17,7 +17,7 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hight_low_game')
 
 acounts = SHEET.worksheet('acounts')
-print(acounts.get_all_values())
+acounts_list = acounts.get_all_values()
 
 countries = {
     "England": 60,
@@ -30,6 +30,37 @@ countries = {
 countries_list = [key for key in countries.keys()]
 
 random.shuffle(countries_list)
+
+
+def ask_for_username():
+    """
+    Ask for username and check if is available"""
+    print("Welcome")
+    keep_looping = True
+    while keep_looping:
+        keep_looping = False
+        input_name = input("Enter your name: ")
+        for lst in acounts_list:
+            if input_name == lst[0]:
+                print("This username already in use.")
+                keep_looping = True
+    return input_name
+
+
+def ask_for_passcode():
+    """
+    Create new user pascode
+    """
+    passcode = input("Create your pascode: ")
+    return passcode
+
+
+def create_new_account(name, passcode, new_score=0):
+    """
+    Create a new acount or update score
+    """
+    new_acount = [name, passcode, new_score]
+    return new_acount
 
 
 def print_question():
