@@ -32,6 +32,19 @@ countries_list = [key for key in countries.keys()]
 random.shuffle(countries_list)
 
 
+def ask_if_returning_user():
+    """
+    Get input for new or returning user
+    """
+    while True:
+        first_question = input("Are you a returning user? (Y/N) ")
+        if first_question.lower() != "y" and first_question.lower() != "n":
+            print("Type 'Y' for yes or 'N' for no")
+        else:
+            break
+    return first_question.lower()
+
+
 def ask_for_username():
     """
     Ask for username and check if is available"""
