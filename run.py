@@ -41,22 +41,25 @@ def ask_if_returning_user():
         if first_question.lower() != "y" and first_question.lower() != "n":
             print("Type 'Y' for yes or 'N' for no")
         else:
+            print("Ok...")
             break
     return first_question.lower()
 
 
 def ask_for_username():
     """
-    Ask for username and check if is available"""
-    print("Welcome")
+    Ask for username and check if is available
+    """
+    print("Let's create a new account for you.\n")
     keep_looping = True
     while keep_looping:
         keep_looping = False
-        input_name = input("Enter your name: ")
+        input_name = input("Type username: ")
         for lst in acounts_list:
             if input_name == lst[0]:
-                print("This username already in use.")
+                print("This username already in use. Try a different one.")
                 keep_looping = True
+    print(f"Welcome {input_name}")
     return input_name
 
 
@@ -68,12 +71,20 @@ def ask_for_passcode():
     return passcode
 
 
+def log_in():
+    """
+    Ask user to login by entering username and passcode
+    """
+    
+
+
 def create_new_account(name, passcode, new_score=0):
     """
-    Create a new acount or update score
+    Create a new account or update score
     """
-    new_acount = [name, passcode, new_score]
-    return new_acount
+    n_account = [name, passcode, new_score]
+    print("Account created successfuly.")
+    return n_account
 
 
 def print_question():
@@ -126,4 +137,12 @@ def main():
         game_on = get_answer()
 
 
+returning_player = ask_if_returning_user()
+if returning_player == "n":
+    new_username = ask_for_username()
+    new_passcode = ask_for_passcode()
+    new_account = create_new_account(new_username, new_passcode)
+    acounts.append_row(new_account)
+
+print(new_account)
 # main()
