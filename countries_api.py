@@ -14,7 +14,8 @@ def get_country_population(country):
         "X-RapidAPI-Host": "world-population.p.rapidapi.com"
     }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+    response = requests.request("GET", url, headers=headers,
+                                params=querystring, timeout=10)
 
     return response.json()["body"]["population"]
 
@@ -30,7 +31,7 @@ def get_countries_list():
         "X-RapidAPI-Host": "world-population.p.rapidapi.com"
     }
 
-    response = requests.request("GET", url, headers=headers)
+    response = requests.request("GET", url, headers=headers, timeout=10)
 
     countries_lst = response.json()["body"]["countries"]
     return countries_lst
@@ -38,4 +39,32 @@ def get_countries_list():
 
 countries_list = get_countries_list()
 
-print(countries_list)
+
+class Country():
+    """
+    Creates a country class instance
+    """
+    def __init__(self, name, population):
+        self.name = name
+        self.population = population
+
+    def describe(self):
+        """
+        Print country population
+        """
+        print(f"{self.name} has a population of {self.population}")
+
+
+def country_class(country):
+    """
+    Creates country class and access his method
+    """
+    population = get_country_population(country)
+    new_country_class = Country(country, population)
+    print(type(new_country_class.population))
+    new_country_class.describe()
+
+
+new_country = countries_list[0]
+
+country_class(new_country)
