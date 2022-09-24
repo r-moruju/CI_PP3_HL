@@ -63,12 +63,13 @@ def log_in_username():
     while True:
         existing_username = input("Enter your username: ")
         if existing_username == "exit":
+            print("\nLogin unssuccesful")
             return False
         elif existing_username not in usernames:
-            print(f"There is no account with the username {existing_username}")
+            print(f"\nThere is no account with username {existing_username}")
             print("You can try again or type 'exit' to close")
         else:
-            print(f"Welcome back {existing_username}")
+            print(f"\nWelcome back {existing_username}")
             break
     return existing_username
 
@@ -122,5 +123,8 @@ def user_account_login():
         return True
     elif returning_player == "y":
         old_user = log_in_username()
-        decision = log_in_passcode(old_user)
-        return decision
+        if old_user is False:
+            return False
+        else:
+            decision = log_in_passcode(old_user)
+            return decision

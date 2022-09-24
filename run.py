@@ -60,5 +60,6 @@ def main():
 
 
 LOGIN = user_account_login()
-if LOGIN:
-    main()
+while not LOGIN:
+    LOGIN = user_account_login()
+main()
