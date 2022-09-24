@@ -2,32 +2,10 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
-import gspread
-from google.oauth2.service_account import Credentials
-
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
-
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('hight_low_game')
-
-accounts = SHEET.worksheet('acounts')
-accounts_list = accounts.get_all_values()
-usernames = [lst[0] for lst in accounts_list]
-countries = {
-    "England": 60,
-    "Poland": 40,
-    "France": 45,
-    "Spain": 44,
-    "Ucraine": 39,
-}
-
-countries_list = [key for key in countries.keys()]
+from worksheet import accounts_list
+from worksheet import usernames
+from countries_api import countries_list
+from countries_api import country_class
 
 random.shuffle(countries_list)
 
@@ -125,7 +103,7 @@ def print_question():
     top_countrie = countries_list[list_iterator]
     bottom_countrie = countries_list[list_iterator + 1]
     print(f"Does {top_countrie} have more population than {bottom_countrie}?")
-    return countries[top_countrie] > countries[bottom_countrie]
+    return country_class(top_countrie) > country_class(bottom_countrie)
 
 
 def get_answer():
@@ -167,16 +145,16 @@ def main():
         game_on = get_answer()
 
 
-returning_player = ask_if_returning_user()
-if returning_player == "n":
-    new_username = ask_for_username()
-    new_passcode = ask_for_passcode()
-    new_account = create_new_account(new_username, new_passcode)
-    accounts.append_row(new_account)
-elif returning_player == "y":
-    old_user = log_in_username()
-    decision = log_in_passcode(old_user)
+#returning_player = ask_if_returning_user()
+#if returning_player == "n":
+    #new_username = ask_for_username()
+    #new_passcode = ask_for_passcode()
+    #new_account = create_new_account(new_username, new_passcode)
+    #accounts.append_row(new_account)
+#elif returning_player == "y":
+    #old_user = log_in_username()
+    #decision = log_in_passcode(old_user)
 
-print(decision)
+#print(decision)
 
-#main()
+main()

@@ -61,10 +61,4 @@ def country_class(country):
     """
     population = get_country_population(country)
     new_country_class = Country(country, population)
-    print(type(new_country_class.population))
-    new_country_class.describe()
-
-
-new_country = countries_list[0]
-
-country_class(new_country)
+    return new_country_class.population
