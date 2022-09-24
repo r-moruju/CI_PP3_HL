@@ -1,6 +1,3 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
 from countries_api import countries_list
 from countries_api import country_class
@@ -36,6 +33,19 @@ def get_answer():
         return False
 
 
+def print_result(num):
+    """
+    Print Score at the end of the game
+    """
+    print(f"You scored {num}.")
+    if num < 3:
+        print("Better luck next time.")
+    elif num >= 3 and num < 7:
+        print("This is a decent result.")
+    else:
+        print("Well done! Outstanding performance.")
+
+
 def main():
     """
     Main function that execute a while loop as long as the user gives
@@ -66,13 +76,8 @@ def main():
             print("while")
             country_population(bottom_countrie)
 
-        print(f"You scored {score}.")
-        if score < 3:
-            print("Better luck next time.")
-        elif score >= 3 and score < 7:
-            print("This is a decent result.")
-        else:
-            print("Well done! Outstanding performance.")
+        print_result(score)
+
         while True:
             keep_play_q = input("Do you want to play again? (Y/N): ")
             if keep_play_q.lower() == "n":
