@@ -111,7 +111,7 @@ def upload_new_acount(lst):
 
 def user_account_login():
     """
-    Ghide user thru login or acount creation
+    Guide user thru login or acount creation
     """
     returning_player = ask_if_returning_user()
     if returning_player == "n":
