@@ -1,4 +1,5 @@
 import random
+from colors import Color as col
 from countries_api import countries_list
 from countries_api import country_class
 from countries_api import country_population
@@ -23,13 +24,13 @@ def get_answer():
     """
     answer = input("Your answer is (Y/N): ")
     if answer.lower() == "y" and question_return:
-        print("You answered right")
+        print(col.GREEN + "You answered right")
         return True
     elif answer.lower() == "n" and not question_return:
-        print("You answered right")
+        print(col.GREEN + "You answered right")
         return True
     else:
-        print("Wrong answer\n")
+        print(col.RED + "Wrong answer\n")
         return False
 
 
