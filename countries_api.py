@@ -57,8 +57,17 @@ class Country():
 
 def country_class(country):
     """
-    Creates country class and access his method
+    Creates country class and access the population
     """
     population = get_country_population(country)
     new_country_class = Country(country, population)
     return new_country_class.population
+
+
+def country_population(country):
+    """
+    Creates country class and access his method
+    """
+    population = get_country_population(country)
+    new_country_class = Country(country, population)
+    print(new_country_class.describe())
