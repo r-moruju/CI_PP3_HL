@@ -70,4 +70,4 @@ def country_population(country):
     """
     population = get_country_population(country)
     new_country_class = Country(country, population)
-    print(new_country_class.describe())
+    return new_country_class.describe()

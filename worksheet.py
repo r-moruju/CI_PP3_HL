@@ -121,10 +121,9 @@ def user_account_login():
         new_account = create_new_account(new_username, new_passcode)
         upload_new_acount(new_account)
         return True
-    elif returning_player == "y":
+    if returning_player == "y":
         old_user = log_in_username()
         if old_user is False:
             return False
-        else:
-            decision = log_in_passcode(old_user)
-            return decision
+        decision = log_in_passcode(old_user)
+        return decision
