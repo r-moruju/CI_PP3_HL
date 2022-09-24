@@ -124,7 +124,7 @@ def print_question():
     """
     top_countrie = countries_list[list_iterator]
     bottom_countrie = countries_list[list_iterator + 1]
-    print(f"Dos {top_countrie} have more population than {bottom_countrie}?")
+    print(f"Does {top_countrie} have more population than {bottom_countrie}?")
     return countries[top_countrie] > countries[bottom_countrie]
 
 
@@ -178,4 +178,5 @@ elif returning_player == "y":
     decision = log_in_passcode(old_user)
 
 print(decision)
-# main()
+
+#main()
