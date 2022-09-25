@@ -95,6 +95,7 @@ def log_in_username():
 def log_in_passcode(username):
     """
     Ask for current user password and check if match
+    @param username(string): Username typed by user
     """
     for lst in accounts_list:
         if lst[0] == username:
@@ -119,6 +120,9 @@ def log_in_passcode(username):
 def create_new_account(name, passcode, new_score=0):
     """
     Create a new account
+    @paran name(string): New username
+    @param passcode(string): New passcode for the above username
+    @param new_score(int): Gives a default zero value to populate the worksheet
     """
     print_logo()
     n_account = [name, passcode, new_score]
@@ -128,6 +132,7 @@ def create_new_account(name, passcode, new_score=0):
 def upload_new_acount(lst):
     """
     Update worksheet with new account
+    @param lst(list): A list to be appended as a new row to the worksheet
     """
     try:
         accounts.append_row(lst)

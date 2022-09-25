@@ -44,6 +44,7 @@ def get_answer():
 def print_result(num):
     """
     Print Score at the end of the game
+    @param num(int): A number which represent the score
     """
     print(f"\nYou scored {num}.")
     if num < 3:
