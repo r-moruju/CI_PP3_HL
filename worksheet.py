@@ -1,5 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from colors import Color as col
+from art import print_logo
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -21,14 +23,17 @@ def ask_if_returning_user():
     """
     Get input for new or returning user
     """
+    print(col.BLUE + "Welcome to Higher/Lower game".center(80))
     while True:
-        first_question = input("Are you a returning user? (Y/N) ")
-        if first_question.lower() != "y" and first_question.lower() != "n":
-            print("Type 'Y' for yes or 'N' for no")
+        question = input("Are you a returning user? (Y/N)\n ".center(80))
+        if question.lower() != "y" and question.lower() != "n":
+            print_logo()
+            print("Type 'Y' for yes or 'N' for no".center(80))
         else:
-            print("Ok...")
+            print_logo()
+            print("Ok...".center(80))
             break
-    return first_question.lower()
+    return question.lower()
 
 
 def ask_for_username():

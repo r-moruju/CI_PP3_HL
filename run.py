@@ -4,6 +4,7 @@ from countries_api import countries_list
 from countries_api import country_class
 from countries_api import country_population
 from worksheet import user_account_login
+from art import print_logo
 
 
 def print_question():
@@ -93,6 +94,7 @@ def main():
                 print("Enter 'Y' for yes or 'N' for no.")
 
 
+print_logo()
 LOGIN = user_account_login()
 while not LOGIN:
     LOGIN = user_account_login()
