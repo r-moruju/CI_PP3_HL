@@ -1,5 +1,6 @@
 import time
 import gspread
+import pwinput
 from google.oauth2.service_account import Credentials
 from colors import Color as col
 from art import print_logo
@@ -27,7 +28,7 @@ def ask_if_returning_user():
     print_logo()
     print(col.BLUE + "Welcome to Higher/Lower game\n")
     while True:
-        question = input("Are you a returning user? (Y/N)\n ")
+        question = input("Are you a returning user? (Y/N): ")
         if question.lower() != "y" and question.lower() != "n":
             print_logo()
             print("Type 'Y' for yes or 'N' for no")
@@ -65,7 +66,7 @@ def ask_for_passcode():
     Create new user passcode
     """
     print_logo()
-    passcode = input("Create your passcode: ")
+    passcode = pwinput.pwinput(prompt="Create your passcode: ")
     return passcode
 
 
@@ -100,12 +101,12 @@ def log_in_passcode(username):
             curent_account = lst
     while True:
         print_logo()
-        existing_passcode = input(f"Enter passcode for username {username}: ")
-        if existing_passcode == "exit":
+        existing_pass = pwinput.pwinput(prompt=f"Passcode for {username}: ")
+        if existing_pass == "exit":
             print(col.RED + "Login failed")
             time.sleep(3)
             break
-        if existing_passcode == curent_account[1]:
+        if existing_pass == curent_account[1]:
             print(col.GREEN + "Login successful")
             time.sleep(3)
             return True
