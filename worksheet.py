@@ -22,7 +22,7 @@ usernames = [lst[0] for lst in accounts_list]
 
 def ask_if_returning_user():
     """
-    Get input for new or returning user
+    Get information for new or returning user
     """
     print_logo()
     print(col.BLUE + "Welcome to Higher/Lower game\n")
@@ -40,7 +40,7 @@ def ask_if_returning_user():
 
 def ask_for_username():
     """
-    Ask for username and check if is available
+    Ask for username and check if it's available
     """
     print("Let's create a new account for you.")
     time.sleep(3)
@@ -48,7 +48,7 @@ def ask_for_username():
     while keep_looping:
         keep_looping = False
         print_logo()
-        input_name = input("Type username: ")
+        input_name = input("Type new username: ")
         for lst in accounts_list:
             if input_name == lst[0]:
                 print("This username already in use. Try again.")
@@ -71,29 +71,29 @@ def ask_for_passcode():
 
 def log_in_username():
     """
-    Ask user to login by entering username and passcode
+    Ask user to login by entering username and check if username exists
     """
     while True:
         print_logo()
-        existing_username = input("Enter your username: ")
-        if existing_username == "exit":
+        old_user = input("Enter your username: ")
+        if old_user == "exit":
             print(col.RED + "Login failed")
             time.sleep(3)
             return False
-        if existing_username not in usernames:
-            print(col.YELLOW + f"\nThere is no account with username {existing_username}")
+        if old_user not in usernames:
+            print(col.YELLOW + f"There is no account with username {old_user}")
             print('You can try again or type "exit" to start over')
             time.sleep(4)
         else:
-            print(f"\nWelcome back {existing_username}")
+            print(f"\nWelcome back {old_user}")
             time.sleep(2)
             break
-    return existing_username
+    return old_user
 
 
 def log_in_passcode(username):
     """
-    Ask for curent user passcode and check if match
+    Ask for current user password and check if match
     """
     for lst in accounts_list:
         if lst[0] == username:
