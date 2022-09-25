@@ -5,6 +5,7 @@ from countries_api import countries_list
 from countries_api import country_class
 from countries_api import country_population
 from worksheet import user_account_login
+from worksheet import update_score
 from art import print_logo
 
 
@@ -112,3 +113,5 @@ LOGIN = user_account_login()
 while not LOGIN:
     LOGIN = user_account_login()
 main()
+
+update_score(score)

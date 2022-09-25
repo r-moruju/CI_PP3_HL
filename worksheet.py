@@ -151,14 +151,30 @@ def user_account_login():
     """
     returning_player = ask_if_returning_user()
     if returning_player == "n":
+        global new_username
         new_username = ask_for_username()
         new_passcode = ask_for_passcode()
         new_account = create_new_account(new_username, new_passcode)
         upload_new_acount(new_account)
         return True
     if returning_player == "y":
+        global old_user
         old_user = log_in_username()
         if old_user is False:
             return False
         decision = log_in_passcode(old_user)
         return decision
+
+
+def update_score(num):
+    new_accounts = SHEET.worksheet('acounts')
+    try:
+        to_finde = new_accounts.find(new_username)
+        cor1 = to_finde.row
+        cor2 = to_finde.col
+        new_accounts.update_cell(cor1, cor2 + 2, num)
+    except:
+        to_finde = new_accounts.find(old_user)
+        cor1 = to_finde.row
+        cor2 = to_finde.col
+        new_accounts.update_cell(cor1, cor2 + 2, num)
