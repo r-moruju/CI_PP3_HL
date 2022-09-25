@@ -1,3 +1,4 @@
+import time
 import random
 from colors import Color as col
 from countries_api import countries_list
@@ -12,6 +13,7 @@ def print_question():
     This function print the question and return True or False
     by comparing the two countries populations
     """
+    print_logo()
     top_countrie = countries_list[list_iterator]
     bottom_countrie = countries_list[list_iterator + 1]
     print(f"Does {top_countrie} have more population than {bottom_countrie}?")
@@ -25,14 +27,18 @@ def get_answer():
     """
     answer = input("Your answer is (Y/N): ")
     if answer.lower() == "y" and question_return:
+        print_logo()
         print(col.GREEN + "You answered right")
+        time.sleep(2)
         return True
-    elif answer.lower() == "n" and not question_return:
+    if answer.lower() == "n" and not question_return:
+        print_logo()
         print(col.GREEN + "You answered right")
+        time.sleep(2)
         return True
-    else:
-        print(col.RED + "Wrong answer\n")
-        return False
+    print_logo()
+    print(col.RED + "Wrong answer\n")
+    return False
 
 
 def print_result(num):
@@ -53,6 +59,10 @@ def main():
     Main function that execute a while loop as long as the user gives
     right answers
     """
+    print_logo()
+    print(col.BLUE + "Gues witch country has more population")
+    print(col.BLUE + "Just answer with 'Y' for yes or 'N' for no")
+    time.sleep(5)
     keep_playing = True
     while keep_playing:
 
@@ -91,7 +101,9 @@ def main():
                 keep_playing = True
                 break
             if keep_play_q.lower() not in ("y", "n"):
+                print_logo()
                 print("Enter 'Y' for yes or 'N' for no.")
+                time.sleep(3)
 
 
 print_logo()

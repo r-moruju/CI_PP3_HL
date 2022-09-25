@@ -24,6 +24,7 @@ def ask_if_returning_user():
     """
     Get input for new or returning user
     """
+    print_logo()
     print(col.BLUE + "Welcome to Higher/Lower game\n")
     while True:
         question = input("Are you a returning user? (Y/N)\n ")
@@ -61,10 +62,10 @@ def ask_for_username():
 
 def ask_for_passcode():
     """
-    Create new user pascode
+    Create new user passcode
     """
     print_logo()
-    passcode = input("Create your pascode: ")
+    passcode = input("Create your passcode: ")
     return passcode
 
 
@@ -76,11 +77,12 @@ def log_in_username():
         print_logo()
         existing_username = input("Enter your username: ")
         if existing_username == "exit":
-            print("\nLogin unssuccesful")
+            print(col.RED + "Login failed")
+            time.sleep(3)
             return False
         if existing_username not in usernames:
             print(col.YELLOW + f"\nThere is no account with username {existing_username}")
-            print("You can try again or type 'exit' to close")
+            print('You can try again or type "exit" to start over')
             time.sleep(4)
         else:
             print(f"\nWelcome back {existing_username}")
@@ -100,26 +102,25 @@ def log_in_passcode(username):
         print_logo()
         existing_passcode = input(f"Enter passcode for username {username}: ")
         if existing_passcode == "exit":
-            print(col.GREEN + "Login unssuccesful")
+            print(col.RED + "Login failed")
             time.sleep(3)
             break
         if existing_passcode == curent_account[1]:
-            print(col.GREEN + "Login successfull")
+            print(col.GREEN + "Login successful")
             time.sleep(3)
             return True
         else:
             print(col.RED + "Wrong passcode!")
-            print("Try again or type 'exit'")
+            print('You can try again or type "exit" to start over')
             time.sleep(3)
 
 
 def create_new_account(name, passcode, new_score=0):
     """
-    Create a new account or update score
+    Create a new account
     """
     print_logo()
     n_account = [name, passcode, new_score]
-    time.sleep(3)
     return n_account
 
 
@@ -133,12 +134,14 @@ def upload_new_acount(lst):
         print(f"{error} at account creation")
         user_account_login()
     else:
-        print(col.GREEN + "Account created successfuly.\n")
+        print_logo()
+        print(col.GREEN + "Account successfully created.\n")
+        time.sleep(4)
 
 
 def user_account_login():
     """
-    Guide user thru login or acount creation
+    Guide the user through login or account creation
     """
     returning_player = ask_if_returning_user()
     if returning_player == "n":
