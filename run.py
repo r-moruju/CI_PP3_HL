@@ -10,8 +10,8 @@ from art import print_logo
 
 def print_question():
     """
-    This function print the question and return True or False
-    by comparing the two countries populations
+    This function prints the question
+    and returns True or False comparing the population of the two countries
     """
     print_logo()
     top_countrie = countries_list[list_iterator]
@@ -28,12 +28,12 @@ def get_answer():
     answer = input("Your answer is (Y/N): ")
     if answer.lower() == "y" and question_return:
         print_logo()
-        print(col.GREEN + "You answered right")
+        print(col.GREEN + "Correct answer")
         time.sleep(2)
         return True
     if answer.lower() == "n" and not question_return:
         print_logo()
-        print(col.GREEN + "You answered right")
+        print(col.GREEN + "Correct answer")
         time.sleep(2)
         return True
     print_logo()
@@ -45,13 +45,13 @@ def print_result(num):
     """
     Print Score at the end of the game
     """
-    print(f"You scored {num}.")
+    print(f"\nYou scored {num}.")
     if num < 3:
-        print("Better luck next time.")
+        print(col.RED + "Better luck next time.")
     elif num >= 3 and num < 7:
-        print("This is a decent result.")
+        print(col.YELLOW + "This is a decent result.")
     else:
-        print("Well done! Outstanding performance.")
+        print(col.GREEN + "Well done! Outstanding performance.")
 
 
 def main():
@@ -93,7 +93,7 @@ def main():
         while True:
             keep_play_q = input("Do you want to play again? (Y/N): ")
             if keep_play_q.lower() == "n":
-                print("Goodby!")
+                print("Goodbye!")
                 keep_playing = False
                 break
             if keep_play_q.lower() == "y":
