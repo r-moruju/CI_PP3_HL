@@ -1,3 +1,4 @@
+from argparse import ArgumentError
 import time
 import gspread
 import pwinput
@@ -167,14 +168,23 @@ def user_account_login():
 
 
 def update_score(num):
+    """
+    Push the score to Google worksheet and update the cell
+    @param num(int): The new score to be pushed to worksheet
+    """
+    print_logo()
+    print("Updating score...")
+    time.sleep(2)
     new_accounts = SHEET.worksheet('acounts')
     try:
         to_finde = new_accounts.find(new_username)
         cor1 = to_finde.row
         cor2 = to_finde.col
         new_accounts.update_cell(cor1, cor2 + 2, num)
-    except:
+        print("Score updated successfully.")
+    except ArgumentError:
         to_finde = new_accounts.find(old_user)
         cor1 = to_finde.row
         cor2 = to_finde.col
         new_accounts.update_cell(cor1, cor2 + 2, num)
+        print("Score updated successfully.")
