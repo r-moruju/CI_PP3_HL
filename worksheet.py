@@ -142,8 +142,8 @@ def upload_new_acount(lst):
         user_account_login()
     else:
         print_logo()
-        print(col.GREEN + "Account successfully created.\n")
-        time.sleep(4)
+        print(col.GREEN + "Account successfully created.")
+        time.sleep(3)
 
 
 def user_account_login():
@@ -174,7 +174,7 @@ def update_score(num):
     """
     print_logo()
     print(col.YELLOW + "Updating score...")
-    time.sleep(2)
+    time.sleep(1)
     new_accounts = SHEET.worksheet('acounts')
     try:
         to_finde = new_accounts.find(new_username)
@@ -196,3 +196,21 @@ def update_score(num):
             print(col.GREEN + "Score updated successfully.")
         else:
             print("Done.")
+
+
+def height_scores():
+    """
+    Create a dictionary with usernames and their score from the worksheet
+    and sort descending by score value
+    """
+    updated_acc_list = accounts.get_all_values()
+    top_scores = {}
+    for accnt in updated_acc_list:
+        top_scores[accnt[0]] = accnt[2]
+    sort_scores = sorted(top_scores.values())
+    sorted_dict = {}
+    for item in sort_scores[::-1]:
+        for key in top_scores.keys():
+            if top_scores[key] == item:
+                sorted_dict[key] = top_scores[key]
+    return sorted_dict

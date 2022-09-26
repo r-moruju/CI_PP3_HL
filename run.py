@@ -6,6 +6,7 @@ from countries_api import country_class
 from countries_api import country_population
 from worksheet import user_account_login
 from worksheet import update_score
+from worksheet import height_scores
 from art import print_logo
 
 
@@ -115,3 +116,4 @@ while not LOGIN:
 main()
 
 update_score(score)
+height_scores()
