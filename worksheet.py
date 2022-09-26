@@ -1,4 +1,3 @@
-from argparse import ArgumentError
 import time
 import gspread
 import pwinput
@@ -77,20 +76,21 @@ def log_in_username():
     """
     while True:
         print_logo()
-        old_user = input("Enter your username: ")
-        if old_user == "exit":
+        user = input("Enter your username: ")
+        if user == "exit":
             print(col.RED + "Login failed")
             time.sleep(3)
             return False
-        if old_user not in usernames:
-            print(col.YELLOW + f"There is no account with username {old_user}")
+        if user not in usernames:
+            print(col.YELLOW + f"There is no account with username {user}")
             print('You can try again or type "exit" to start over')
             time.sleep(4)
         else:
-            print(f"\nWelcome back {old_user}")
+            print_logo()
+            print(f"Welcome back {user}")
             time.sleep(2)
             break
-    return old_user
+    return user
 
 
 def log_in_passcode(username):
@@ -169,22 +169,30 @@ def user_account_login():
 
 def update_score(num):
     """
-    Push the score to Google worksheet and update the cell
+    Push the score to Google worksheet and update the score cell
     @param num(int): The new score to be pushed to worksheet
     """
     print_logo()
-    print("Updating score...")
+    print(col.YELLOW + "Updating score...")
     time.sleep(2)
     new_accounts = SHEET.worksheet('acounts')
     try:
         to_finde = new_accounts.find(new_username)
         cor1 = to_finde.row
         cor2 = to_finde.col
-        new_accounts.update_cell(cor1, cor2 + 2, num)
-        print("Score updated successfully.")
-    except ArgumentError:
+        old_score = new_accounts.cell(cor1, cor2 + 2).value
+        if num > int(old_score):
+            new_accounts.update_cell(cor1, cor2 + 2, num)
+            print(col.GREEN + "Score updated successfully.")
+        else:
+            print("Done.")
+    except NameError:
         to_finde = new_accounts.find(old_user)
         cor1 = to_finde.row
         cor2 = to_finde.col
-        new_accounts.update_cell(cor1, cor2 + 2, num)
-        print("Score updated successfully.")
+        old_score = new_accounts.cell(cor1, cor2 + 2).value
+        if num > int(old_score):
+            new_accounts.update_cell(cor1, cor2 + 2, num)
+            print(col.GREEN + "Score updated successfully.")
+        else:
+            print("Done.")
