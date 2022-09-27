@@ -27,20 +27,26 @@ def get_answer():
     Get user input and and by comparing with question output
     return True or False
     """
-    answer = input("Your answer is (Y/N): ")
-    if answer.lower() == "y" and question_return:
-        print_logo()
-        print(col.GREEN + "Correct answer")
-        time.sleep(2)
-        return True
-    if answer.lower() == "n" and not question_return:
-        print_logo()
-        print(col.GREEN + "Correct answer")
-        time.sleep(2)
-        return True
-    print_logo()
-    print(col.RED + "Wrong answer\n")
-    return False
+    while True:
+        answer = input("Your answer is (Y/N): ")
+        if answer.lower() not in ("y", "n"):
+            print(col.RED + "Wrong input!")
+            print(col.YELLOW + "Enter 'Y' for yes or 'N' for no.")
+            time.sleep(2)
+        if answer.lower() == "y" and question_return:
+            print_logo()
+            print(col.GREEN + "Correct answer!")
+            time.sleep(2)
+            return True
+        if answer.lower() == "n" and not question_return:
+            print_logo()
+            print(col.GREEN + "Correct answer!")
+            time.sleep(2)
+            return True
+        if (answer.lower() == "y" and not question_return) or (answer.lower() == "n" and question_return):
+            print_logo()
+            print(col.RED + "Wrong answer!\n")
+            return False
 
 
 def print_result(num):
@@ -61,8 +67,6 @@ def replay():
     """
     Ask user to play again and return True or False
     """
-    time.sleep(2)
-    print_logo()
     while True:
         keep_play_q = input("Do you want to play again? (Y/N): ")
         if keep_play_q.lower() == "n":
@@ -73,7 +77,7 @@ def replay():
             return True
         if keep_play_q.lower() not in ("y", "n"):
             print_logo()
-            print("Enter 'Y' for yes or 'N' for no.")
+            print(col.YELLOW + "Enter 'Y' for yes or 'N' for no.")
             time.sleep(3)
 
 
