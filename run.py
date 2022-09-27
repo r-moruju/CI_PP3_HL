@@ -57,6 +57,26 @@ def print_result(num):
         print(col.GREEN + "Well done! Outstanding performance.")
 
 
+def replay():
+    """
+    Ask user to play again and return True or False
+    """
+    time.sleep(2)
+    print_logo()
+    while True:
+        keep_play_q = input("Do you want to play again? (Y/N): ")
+        if keep_play_q.lower() == "n":
+            print("Goodbye!")
+            return False
+        if keep_play_q.lower() == "y":
+            print("Good luck!")
+            return True
+        if keep_play_q.lower() not in ("y", "n"):
+            print_logo()
+            print("Enter 'Y' for yes or 'N' for no.")
+            time.sleep(3)
+
+
 def main():
     """
     Main function that execute a while loop as long as the user gives
@@ -92,21 +112,8 @@ def main():
             country_population(bottom_countrie)
 
         print_result(score)
-
-        while True:
-            keep_play_q = input("Do you want to play again? (Y/N): ")
-            if keep_play_q.lower() == "n":
-                print("Goodbye!")
-                keep_playing = False
-                break
-            if keep_play_q.lower() == "y":
-                print("Good luck!")
-                keep_playing = True
-                break
-            if keep_play_q.lower() not in ("y", "n"):
-                print_logo()
-                print("Enter 'Y' for yes or 'N' for no.")
-                time.sleep(3)
+        update_score(score)
+        keep_playing = replay()
 
 
 print_logo()
@@ -115,5 +122,7 @@ while not LOGIN:
     LOGIN = user_account_login()
 main()
 
-update_score(score)
-height_scores()
+sorted_dict = height_scores()
+print(col.YELLOW + "Heighscores:")
+for k, v in sorted_dict.items():
+    print(f"{k}: {v}")
