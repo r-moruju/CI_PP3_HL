@@ -196,6 +196,7 @@ def update_score(num):
             print(col.GREEN + "Score updated successfully.")
         else:
             print("Done.")
+    time.sleep(2)
 
 
 def height_scores():

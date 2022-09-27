@@ -70,10 +70,8 @@ def replay():
     while True:
         keep_play_q = input("Do you want to play again? (Y/N): ")
         if keep_play_q.lower() == "n":
-            print("Goodbye!")
             return False
         if keep_play_q.lower() == "y":
-            print("Good luck!")
             return True
         if keep_play_q.lower() not in ("y", "n"):
             print_logo()
@@ -116,8 +114,8 @@ def main():
             country_population(bottom_countrie)
 
         print_result(score)
-        update_score(score)
         keep_playing = replay()
+        update_score(score)
 
 
 print_logo()
