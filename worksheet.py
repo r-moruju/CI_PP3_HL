@@ -72,9 +72,14 @@ def ask_for_passcode():
     """
     Create new user passcode
     """
-    print_logo()
-    passcode = pwinput.pwinput(prompt="Create your passcode: ")
-    return passcode
+    while True:
+        print_logo()
+        passcode = pwinput.pwinput(prompt="Create your passcode: ")
+        if len(passcode) <= 3:
+            print(col.RED + "Passcode must be longer than 3 characters")
+            time.sleep(3)
+            continue
+        return passcode
 
 
 def log_in_username():
