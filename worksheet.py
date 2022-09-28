@@ -26,12 +26,12 @@ def ask_if_returning_user():
     Get information for new or returning user
     """
     print_logo()
-    print(col.BLUE + "Welcome to Higher/Lower game\n")
+    print(col.BLUE + "Welcome to Higher/Lower game.\n")
     while True:
         question = input("Are you a returning user? (Y/N): ")
         if question.lower() != "y" and question.lower() != "n":
             print_logo()
-            print("Type 'Y' for yes or 'N' for no")
+            print("Type 'Y' for yes or 'N' for no.")
         else:
             print_logo()
             print("Ok...")
@@ -56,7 +56,7 @@ def ask_for_username():
                 time.sleep(3.5)
                 keep_looping = True
     print_logo()
-    print(f"Welcome {input_name}")
+    print(f"Welcome {input_name}.")
     time.sleep(3)
     return input_name
 
@@ -78,16 +78,16 @@ def log_in_username():
         print_logo()
         user = input("Enter your username: ")
         if user == "exit":
-            print(col.RED + "Login failed")
+            print(col.RED + "Login failed.")
             time.sleep(3)
             return False
         if user not in usernames:
-            print(col.YELLOW + f"There is no account with username {user}")
-            print('You can try again or type "exit" to start over')
+            print(col.YELLOW + f"There is no account with username {user}.")
+            print('You can try again or type "exit" to start over.')
             time.sleep(4)
         else:
             print_logo()
-            print(f"Welcome back {user}")
+            print(f"Welcome back {user}.")
             time.sleep(2)
             break
     return user
@@ -105,17 +105,16 @@ def log_in_passcode(username):
         print_logo()
         existing_pass = pwinput.pwinput(prompt=f"Passcode for {username}: ")
         if existing_pass == "exit":
-            print(col.RED + "Login failed")
+            print(col.RED + "Login failed.")
             time.sleep(3)
-            break
+            return False
         if existing_pass == curent_account[1]:
-            print(col.GREEN + "Login successful")
+            print(col.GREEN + "Login successful.")
             time.sleep(3)
             return True
-        else:
-            print(col.RED + "Wrong passcode!")
-            print('You can try again or type "exit" to start over')
-            time.sleep(3)
+        print(col.RED + "Wrong passcode!")
+        print('You can try again or type "exit" to start over.')
+        time.sleep(3)
 
 
 def create_new_account(name, passcode, new_score=0):
@@ -138,7 +137,7 @@ def upload_new_acount(lst):
     try:
         accounts.append_row(lst)
     except ValueError as error:
-        print(f"{error} at account creation")
+        print(f"{error} at account creation.")
         user_account_login()
     else:
         print_logo()
@@ -162,8 +161,9 @@ def user_account_login():
         global old_user
         old_user = log_in_username()
         if old_user is False:
-            return False
+            return False  # Return false if user type exit instead of username
         decision = log_in_passcode(old_user)
+        #  decision may be false if user types exit when asked for the passcode
         return decision
 
 
