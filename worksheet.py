@@ -50,9 +50,16 @@ def ask_for_username():
         keep_looping = False
         print_logo()
         input_name = input("Type new username: ")
+        if len(input_name) < 2 or len(input_name) > 12:
+            print(col.RED + "Username must be between" +
+                  "2 - 12 characters long.")
+            print(col.RED + "Please try again.\n")
+            time.sleep(3)
+            keep_looping = True
+            continue
         for lst in accounts_list:
             if input_name == lst[0]:
-                print("This username already in use. Try again.")
+                print(col.RED + "This username already in use. Try again.")
                 time.sleep(3.5)
                 keep_looping = True
     print_logo()
