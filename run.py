@@ -43,7 +43,11 @@ def get_answer():
             print(col.GREEN + "Correct answer!")
             time.sleep(2)
             return True
-        if (answer.lower() == "y" and not question_return) or (answer.lower() == "n" and question_return):
+        if answer.lower() == "y" and not question_return:
+            print_logo()
+            print(col.RED + "Wrong answer!\n")
+            return False
+        if answer.lower() == "n" and question_return:
             print_logo()
             print(col.RED + "Wrong answer!\n")
             return False
