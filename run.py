@@ -85,8 +85,8 @@ def main():
     right answers
     """
     print_logo()
-    print(col.BLUE + "Gues witch country has more population")
-    print(col.BLUE + "Just answer with 'Y' for yes or 'N' for no")
+    print(col.BLUE + "Gues witch country has more population.")
+    print(col.BLUE + "Just answer with 'Y' for yes or 'N' for no.")
     time.sleep(5)
     keep_playing = True
     while keep_playing:
@@ -125,6 +125,13 @@ while not LOGIN:
 main()
 
 sorted_dict = height_scores()
+print_logo()
 print(col.YELLOW + "Heighscores:")
+breaker = 0
 for k, v in sorted_dict.items():
+    breaker += 1
+    if breaker == 1:
+        continue
     print(f"{k}: {v}")
+    if breaker == 6:
+        break
