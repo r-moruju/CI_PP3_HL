@@ -16,10 +16,10 @@ def print_question():
     and returns True or False comparing the population of the two countries
     """
     print_logo()
-    top_countrie = countries_list[list_iterator]
-    bottom_countrie = countries_list[list_iterator + 1]
-    print(f"Does {top_countrie} have more population than {bottom_countrie}?".center(80))
-    return country_class(top_countrie) > country_class(bottom_countrie)
+    country1 = countries_list[list_iterator]
+    country2 = countries_list[list_iterator + 1]
+    print(f"Does {country1} have more population than {country2}?".center(80))
+    return country_class(country1) > country_class(country2)
 
 
 def get_answer():
@@ -58,7 +58,8 @@ def print_result(num):
     Print Score at the end of the game
     @param num(int): A number which represent the score
     """
-    print(f"\nYou scored {num}.".center(80))
+    print("\n")
+    print(f"You scored {num}.".center(80))
     if num < 3:
         print(col.RED + "Better luck next time.".center(80))
     elif num >= 3 and num < 7:
