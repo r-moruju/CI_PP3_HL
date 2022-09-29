@@ -51,8 +51,7 @@ def ask_for_username():
         print_logo()
         input_name = input("Type new username:\n ".center(80))
         if len(input_name) < 2 or len(input_name) > 12:
-            print(col.RED + "Username must be between" +
-                  "2 - 12 characters long.".center(80))
+            print(col.RED + "Username must be between 2 - 12 characters long.".center(80))
             print(col.RED + "Please try again.\n".center(80))
             time.sleep(3)
             keep_looping = True
