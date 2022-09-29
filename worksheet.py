@@ -74,7 +74,7 @@ def ask_for_passcode():
     """
     while True:
         print_logo()
-        passcode = pwinput.pwinput(prompt="Create your passcode: ".center(80))
+        passcode = pwinput.pwinput(prompt="Create your passcode:\n ".center(80))
         if len(passcode) <= 3:
             print(col.RED + "Passcode must be longer than 3 characters".center(80))
             time.sleep(3)
@@ -115,7 +115,7 @@ def log_in_passcode(username):
             curent_account = lst
     while True:
         print_logo()
-        existing_pass = pwinput.pwinput(prompt=f"Passcode for {username}: ".center(80))
+        existing_pass = pwinput.pwinput(prompt=f"Passcode for {username}:\n ".center(80))
         if existing_pass == "exit":
             print(col.RED + "Login failed.".center(80))
             time.sleep(3)
