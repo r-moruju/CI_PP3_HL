@@ -18,7 +18,7 @@ def print_question():
     print_logo()
     top_countrie = countries_list[list_iterator]
     bottom_countrie = countries_list[list_iterator + 1]
-    print(f"Does {top_countrie} have more population than {bottom_countrie}?")
+    print(f"Does {top_countrie} have more population than {bottom_countrie}?".center(80))
     return country_class(top_countrie) > country_class(bottom_countrie)
 
 
@@ -28,28 +28,28 @@ def get_answer():
     return True or False
     """
     while True:
-        answer = input("Your answer is (Y/N):\n")
+        answer = input("Your answer is (Y/N): ".center(80))
         if answer.lower() not in ("y", "n"):
-            print(col.RED + "Wrong input!")
-            print(col.YELLOW + "Enter 'Y' for yes or 'N' for no.")
+            print(col.RED + "Wrong input!".center(80))
+            print(col.YELLOW + "Enter 'Y' for yes or 'N' for no.".center(80))
             time.sleep(2)
         if answer.lower() == "y" and question_return:
             print_logo()
-            print(col.GREEN + "Correct answer!")
+            print(col.GREEN + "Correct answer!".center(80))
             time.sleep(2)
             return True
         if answer.lower() == "n" and not question_return:
             print_logo()
-            print(col.GREEN + "Correct answer!")
+            print(col.GREEN + "Correct answer!".center(80))
             time.sleep(2)
             return True
         if answer.lower() == "y" and not question_return:
             print_logo()
-            print(col.RED + "Wrong answer!\n")
+            print(col.RED + "Wrong answer!\n".center(80))
             return False
         if answer.lower() == "n" and question_return:
             print_logo()
-            print(col.RED + "Wrong answer!\n")
+            print(col.RED + "Wrong answer!\n".center(80))
             return False
 
 
@@ -58,13 +58,13 @@ def print_result(num):
     Print Score at the end of the game
     @param num(int): A number which represent the score
     """
-    print(f"\nYou scored {num}.")
+    print(f"\nYou scored {num}.".center(80))
     if num < 3:
-        print(col.RED + "Better luck next time.")
+        print(col.RED + "Better luck next time.".center(80))
     elif num >= 3 and num < 7:
-        print(col.YELLOW + "This is a decent result.")
+        print(col.YELLOW + "This is a decent result.".center(80))
     else:
-        print(col.GREEN + "Well done! Outstanding performance.")
+        print(col.GREEN + "Well done! Outstanding performance.".center(80))
 
 
 def replay():
@@ -72,14 +72,14 @@ def replay():
     Ask user to play again and return True or False
     """
     while True:
-        keep_play_q = input("Do you want to play again? (Y/N):\n")
+        keep_play_q = input("Do you want to play again? (Y/N): ".center(80))
         if keep_play_q.lower() == "n":
             return False
         if keep_play_q.lower() == "y":
             return True
         if keep_play_q.lower() not in ("y", "n"):
             print_logo()
-            print(col.YELLOW + "Enter 'Y' for yes or 'N' for no.")
+            print(col.YELLOW + "Enter 'Y' for yes or 'N' for no.".center(80))
             time.sleep(3)
 
 
@@ -89,8 +89,8 @@ def main():
     right answers
     """
     print_logo()
-    print(col.BLUE + "Gues witch country has more population.")
-    print(col.BLUE + "Just answer with 'Y' for yes or 'N' for no.")
+    print(col.BLUE + "Gues witch country has more population.".center(80))
+    print(col.BLUE + "Just answer with 'Y' for yes or 'N' for no.".center(80))
     time.sleep(5)
     keep_playing = True
     while keep_playing:
@@ -114,7 +114,7 @@ def main():
         bottom_countrie = countries_list[list_iterator + 1]
         if not game_on:
             country_population(top_countrie)
-            print("while")
+            print("while".center(80))
             country_population(bottom_countrie)
 
         print_result(score)
@@ -130,12 +130,12 @@ main()
 
 sorted_dict = height_scores()
 print_logo()
-print(col.YELLOW + "Heighscores:")
+print(col.YELLOW + "Heighscores:".center(80))
 breaker = 0
 for k, v in sorted_dict.items():
     breaker += 1
     if breaker == 1:
         continue
-    print(f"{k}: {v}")
+    print(f"{k}: {v}".center(80))
     if breaker == 6:
         break

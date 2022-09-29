@@ -53,7 +53,7 @@ class Country():
         """
         Print country population
         """
-        print(f"{self.name} has a population of {self.population}")
+        print(f"{self.name} has a population of {self.population}".center(80))
 
 
 def country_class(country):
