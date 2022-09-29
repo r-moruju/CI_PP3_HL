@@ -28,7 +28,7 @@ def get_answer():
     return True or False
     """
     while True:
-        answer = input("Your answer is (Y/N): ")
+        answer = input("Your answer is (Y/N):\n")
         if answer.lower() not in ("y", "n"):
             print(col.RED + "Wrong input!")
             print(col.YELLOW + "Enter 'Y' for yes or 'N' for no.")
@@ -72,7 +72,7 @@ def replay():
     Ask user to play again and return True or False
     """
     while True:
-        keep_play_q = input("Do you want to play again? (Y/N): ")
+        keep_play_q = input("Do you want to play again? (Y/N):\n")
         if keep_play_q.lower() == "n":
             return False
         if keep_play_q.lower() == "y":

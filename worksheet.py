@@ -28,7 +28,7 @@ def ask_if_returning_user():
     print_logo()
     print(col.BLUE + "Welcome to Higher/Lower game.\n")
     while True:
-        question = input("Are you a returning user? (Y/N): ")
+        question = input("Are you a returning user? (Y/N):\n")
         if question.lower() != "y" and question.lower() != "n":
             print_logo()
             print("Type 'Y' for yes or 'N' for no.")
@@ -49,7 +49,7 @@ def ask_for_username():
     while keep_looping:
         keep_looping = False
         print_logo()
-        input_name = input("Type new username: ")
+        input_name = input("Type new username:\n")
         if len(input_name) < 2 or len(input_name) > 12:
             print(col.RED + "Username must be between" +
                   "2 - 12 characters long.")
@@ -88,7 +88,7 @@ def log_in_username():
     """
     while True:
         print_logo()
-        user = input("Enter your username: ")
+        user = input("Enter your username:\n")
         if user == "exit":
             print(col.RED + "Login failed.")
             time.sleep(3)
