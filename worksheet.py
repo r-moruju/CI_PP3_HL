@@ -31,7 +31,7 @@ def ask_if_returning_user():
         question = input("Are you a returning user? (Y/N): ".center(80))
         if question.lower() != "y" and question.lower() != "n":
             print_logo()
-            print(col.Yellow + "Type 'Y' for yes or 'N' for no.".center(80))
+            print(col.YELLOW + "Type 'Y' for yes or 'N' for no.".center(80))
         else:
             print_logo()
             print("Ok...".center(80))
