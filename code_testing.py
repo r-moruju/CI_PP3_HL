@@ -1,7 +1,8 @@
 import unittest
 from worksheet import create_new_account
-from worksheet import upload_new_acount
+from worksheet import height_scores
 from countries_api import country_class
+from countries_api import Country
 
 
 class TestWorksheet(unittest.TestCase):
@@ -22,8 +23,8 @@ class TestWorksheet(unittest.TestCase):
         result = create_new_account("raz", "1234")
         self.assertNotEqual(result, ("raz", "1234", 0))
 
-    def test_upload_new_acount(self):
-        self.assertRaises(ValueError, upload_new_acount, 3)
+    def test_height_scores(self):
+        self.assertEqual(height_scores()["Test1"], "0")
 
 
 class TestCountriesApi(unittest.TestCase):
@@ -51,6 +52,14 @@ class TestCountriesApi(unittest.TestCase):
         country2 = "Afghanistan"
         country2_population = 28928346
         self.assertNotEqual(country_class(country2), country2_population)
+
+    def test_country_class(self):
+        """
+        Test the Country class
+        """
+        country = Country("Romania", 19000000)
+        self.assertEqual(country.population, 19000000)
+        self.assertEqual(country.name, "Romania")
 
 
 if __name__ == "__main__":
