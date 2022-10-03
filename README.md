@@ -86,3 +86,24 @@ If user answer with yes to the "Are you a returning user?" question, then he mus
 After the account creation or after a successful log in, the game starts.
 The question is printed to the terminal and the user must answer again with yes or no. This repeats until a wrong answer is given. Then the score is printed together with both countries populations.
 The option to replay is given to the user. If he chooses not to play again, then the top 5 scores are printed to the terminal
+
+## User Stories
+
+### Users
+
+1. I want to have clear options to select when prompted
+2. I want to be able to read the rules of the game
+3. I want to personalise the game and enter my name
+4. I want to be able to log-in if I return to the game
+5. I want to receive a real time feedback throughout the game
+6. I want to get a feedback when I win the game
+7. I want to be able to play multiple games when I'm logged in
+8. I want to see my score
+
+### Site Owner
+
+9. I want users to have a positive experience whilst playing the game
+10. I want users to easily navigate the game
+11. I want user accounts to be saved to Google Spreadsheet
+12. I want the user to get feedback in case of wrong input
+13. I want data entry to be validated, to guide the user on how to correctly format the input
