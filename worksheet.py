@@ -21,7 +21,7 @@ accounts_list = accounts.get_all_values()
 usernames = [lst[0] for lst in accounts_list]
 
 
-def ask_if_returning_user():
+def ask_if_returning_user() -> str:
     """
     Get information for new or returning user
     """
@@ -39,7 +39,7 @@ def ask_if_returning_user():
     return question.lower()
 
 
-def ask_for_username():
+def ask_for_username() -> str:
     """
     Ask for username and check if it's available
     """
@@ -67,7 +67,7 @@ def ask_for_username():
     return input_name
 
 
-def ask_for_passcode():
+def ask_for_passcode() -> str:
     """
     Create new user passcode
     """
@@ -81,7 +81,7 @@ def ask_for_passcode():
         return passcode
 
 
-def log_in_username():
+def log_in_username() -> str:
     """
     Ask user to login by entering username and check if username exists
     """
@@ -104,7 +104,7 @@ def log_in_username():
     return user
 
 
-def log_in_passcode(username):
+def log_in_passcode(username: str) -> bool:
     """
     Ask for current user password and check if match
     @param username(string): Username typed by user
@@ -128,7 +128,7 @@ def log_in_passcode(username):
         time.sleep(3)
 
 
-def create_new_account(name, passcode, new_score=0):
+def create_new_account(name: str, passcode: str, new_score=0) -> list:
     """
     Create a new account
     @paran name(string): New username
@@ -140,7 +140,7 @@ def create_new_account(name, passcode, new_score=0):
     return n_account
 
 
-def upload_new_acount(lst):
+def upload_new_acount(lst: list):
     """
     Update worksheet with new account
     @param lst(list): A list to be appended as a new row to the worksheet
@@ -156,7 +156,7 @@ def upload_new_acount(lst):
         time.sleep(3)
 
 
-def user_account_login():
+def user_account_login() -> bool:
     """
     Guide the user through login or account creation
     """
@@ -178,7 +178,7 @@ def user_account_login():
         return decision
 
 
-def update_score(num):
+def update_score(num: str):
     """
     Push the score to Google worksheet and update the score cell
     @param num(int): The new score to be pushed to worksheet
@@ -210,7 +210,7 @@ def update_score(num):
     time.sleep(2)
 
 
-def height_scores():
+def height_scores() -> dict:
     """
     Create a dictionary with usernames and their score from the worksheet
     and sort descending by score value

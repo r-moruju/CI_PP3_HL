@@ -10,7 +10,7 @@ from worksheet import height_scores
 from art import print_logo
 
 
-def print_question():
+def print_question() -> bool:
     """
     This function prints the question
     and returns True or False comparing the population of the two countries
@@ -22,7 +22,7 @@ def print_question():
     return country_class(country1) > country_class(country2)
 
 
-def get_answer():
+def get_answer() -> bool:
     """
     Get user input and and by comparing with question output
     return True or False
@@ -53,7 +53,7 @@ def get_answer():
             return False
 
 
-def print_result(num):
+def print_result(num: int):
     """
     Print Score at the end of the game
     @param num(int): A number which represent the score
@@ -68,7 +68,7 @@ def print_result(num):
         print(col.GREEN + "Well done! Outstanding performance.".center(80))
 
 
-def replay():
+def replay() -> bool:
     """
     Ask user to play again and return True or False
     """
