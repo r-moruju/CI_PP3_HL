@@ -99,7 +99,7 @@ There is no specific audience of this game.
 3. I want to personalise the game and enter my name
 4. I want to be able to log-in if I return to the game
 5. I want to receive a real time feedback throughout the game
-6. I want to get a feedback when I win the game
+6. I want to get a feedback after each answer
 7. I want to be able to play multiple games when I'm logged in
 8. I want to see my score
 
@@ -157,3 +157,110 @@ VSCode was used to write the project code using Code Institute template
 - [google.oauth2.service_account](https://google-auth.readthedocs.io/en/master/) - Module used to set up the authentification needed to access the Google API and connect my Service Account with the Credentials function. A creds.json file is created with all details the API needs to access the google account. In deployment to heroku this information is stored in the config var section.
 
 [Back to Table Of Contents](#table-of-contents)
+
+## Features
+
+### Welcome message
+
+- Provides user with a welcome message
+- Gives user option to log-in or to create a new account
+- User stories covered: 9
+ 
+<details>
+    <summary>Welcome Screenshot</summary>
+
+![Welcome message](docs/features/welcome.png)
+</details>
+
+### Game Instructions
+- Displays clear simple game instructions
+- User stories covered: 2
+  
+<details>
+    <summary>Game instructions Screenshot</summary>
+
+![Game instructions](docs/features/game-rules.png)
+</details>
+
+### Log-in
+- Asks users for their username
+- Informs them if the username in not registered
+- Asks users for their passcode
+- Gives users alternative to start over and create a new account if can not remenber the passcode
+- If correct, access their data from the Google Spreadsheet
+- User stories covered: 3, 4
+
+<details>
+    <summary>Log-in Screenshot</summary>
+
+![Log-in-1](docs/features/log-in-1.png)
+![Log-in-2](docs/features/log-in-2.png)
+![Log-in-3](docs/features/log-in-3.png)
+</details>
+
+<details>
+    <summary>Alternative Log-in Screenshot</summary>
+
+![Log-in wrong username](docs/features/alternative-log-in-1.png)
+![Log-in wrong passcode](docs/features/alternative-log-in-2.png)
+</details>
+
+### Account creation
+- Asks user for a new username and a passcode
+- Validates user input values
+- Informs user if the username is already taken
+- User account will be saved to Google Spreadsheet after creation
+- User stories covered: 3, 11, 13
+
+<details>
+    <summary>Account creation Screenshot</summary>
+
+![Account creation](docs/features/new-account-1.png)
+![Account creation](docs/features/new-account-2.png)
+![Account creation](docs/features/new-account-3.png)
+</details>
+
+<details>
+    <summary>Account creation Validation Screenshot</summary>
+
+![Account creation Validation](docs/features/new-account-error-1.png)
+![Account creation Validation](docs/features/new-account-error-2.png)
+</details>
+
+### Game
+- Displays the question
+- Player is asked to type yes or no
+- Display warning message if user typed a wrong input
+- Provide feedback on the user answer
+- Show the populations of the countries from the question with the wrong answer
+- Gives options to play again after finished game
+- Display the score and feedback on the play performance
+- User stories covered: 1, 5, 6, 7, 8, 10, 12
+
+<details>
+    <summary>Game Screenshot</summary>
+
+![Game screen](docs/features/game-1.png)
+![Game screen](docs/features/game-2.png)
+![Game screen](docs/features/game-3.png)
+</details>
+
+<details>
+    <summary>Wrong input in Game Screenshot</summary>
+
+![Wrong input in Game screen](docs/features/game-error-1.png)
+</details>
+
+#### HeighScores
+- Display the top five heighscores
+
+<details>
+    <summary>Height Scores Screenshot</summary>
+
+![HeighScores](docs/features/heighscores.png)
+</details>
+
+### User Input Validation
+- Displays an error message if user input is not in a form that was expected
+- Asks for a new input and provides guidance to user on how to correctly format the input
+- User stories covered: 
