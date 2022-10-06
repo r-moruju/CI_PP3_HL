@@ -138,7 +138,7 @@ The following flowchart summarises the structure and logic of the application.
 - [Google Sheets](https://www.google.co.uk/sheets/about/) were used to store users details
 - [Word Population API](https://rapidapi.com/aldair.sr99/api/world-population/) Used to get all countries populations
 - [Heroku Platform](https://dashboard.heroku.com/) was used to deploy the project into live environment
-- [PEP8](http://pep8online.com/) was used to check my code against Python conventions
+- [PythonChecker](https://www.pythonchecker.com/) was used to check my code against Python conventions
 - [Visual Studio Code (VSCode)](https://code.visualstudio.com/)
 VSCode was used to write the project code using Code Institute template
 
@@ -263,4 +263,41 @@ VSCode was used to write the project code using Code Institute template
 ### User Input Validation
 - Displays an error message if user input is not in a form that was expected
 - Asks for a new input and provides guidance to user on how to correctly format the input
-- User stories covered: 
+- User stories covered: 1, 12, 13
+
+<details>
+    <summary>User Input Validation Screenshots</summary>
+
+![User Input Validation](docs/features/input-validation.png)
+</details>
+
+## Validation
+
+[PythonChecker](https://www.pythonchecker.com/) was used to check the code for PEP8 requirements. All code passes without significant errors
+<details><summary>PEP8 check for run.py</summary>
+<img src="docs/validation/validation-run.png">
+</details>
+
+<details><summary>PEP8 check for worcksheet.py part 1</summary>
+<img src="docs/validation/validation-worksheet-1.png">
+</details>
+
+<details><summary>PEP8 check for worcksheet.py part 2</summary>
+<img src="docs/validation/validation-worksheet-2.png">
+</details>
+
+<details><summary>PEP8 check for colors.py</summary>
+<img src="docs/validation/validation-color.png">
+</details>
+
+<details><summary>PEP8 check for code_testing.py</summary>
+<img src="docs/validation/validation-code-testing.png">
+</details>
+
+<details><summary>PEP8 check for countries_api.py</summary>
+<img src="docs/validation/validation-countries-api.png">
+</details>
+
+<details><summary>PEP8 check for art.py</summary>
+<img src="docs/validation/validation-art.png">
+</details>

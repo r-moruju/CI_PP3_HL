@@ -24,6 +24,9 @@ class TestWorksheet(unittest.TestCase):
         self.assertNotEqual(result, ("raz", "1234", 0))
 
     def test_height_scores(self):
+        """
+        Test output of height_scores function
+        """
         self.assertEqual(height_scores()["Test1"], "0")
 
 
