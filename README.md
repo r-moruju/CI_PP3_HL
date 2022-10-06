@@ -71,21 +71,21 @@ There is no specific audience of this game.
 
 <details><summary>Click here to view instructions</summary>
 
-    #### Main Menu
-    On the main menu, users are presented with an ASCII art rendering of the name 'Higher/Lower'. Below the graphic the user is greet with a welcome message and asked if he is a returning user. The user can answer the question by typing "y" for yes or "n" for no. If anything else is typed, it will be asked to try again
+  #### Main Menu
+  On the main menu, users are presented with an ASCII art rendering of the name 'Higher/Lower'. Below the graphic the user is greet with a welcome message and asked if he is a returning user. The user can answer the question by typing "y" for yes or "n" for no. If anything else is typed, it will be asked to try again
 
-    At any point of the game, if the user inputs somethig which do not correspond to the suggested options then they will be prompt to try again.
+  At any point of the game, if the user inputs somethig which do not correspond to the suggested options then they will be prompt to try again.
 
-    #### New account
-    If the user answer with no to the first question, then he will be asked to create a new account by entering a username and a passcode
+  #### New account
+  If the user answer with no to the first question, then he will be asked to create a new account by entering a username and a passcode
 
-    #### Log-in
-    If user answer with yes to the "Are you a returning user?" question, then he must provide an existing username and a corresponding passcode.
+  #### Log-in
+  If user answer with yes to the "Are you a returning user?" question, then he must provide an existing username and a corresponding passcode.
 
-    #### Play
-    After the account creation or after a successful log in, the game starts.
-    The question is printed to the terminal and the user must answer again with yes or no. This repeats until a wrong answer is given. Then the score is printed together with both countries populations.
-    The option to replay is given to the user. If he chooses not to play again, then the top 5 scores are printed to the terminal
+  #### Play
+  After the account creation or after a successful log in, the game starts.
+  The question is printed to the terminal and the user must answer again with yes or no. This repeats until a wrong answer is given. Then the score is printed together with both countries populations.
+  The option to replay is given to the user. If he chooses not to play again, then the top 5 scores are printed to the terminal
 
 </details>
 
