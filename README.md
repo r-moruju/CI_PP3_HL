@@ -330,3 +330,13 @@ The testing approach is as follows:
 <details><summary>Screenshot</summary>
 <img src="docs/testing/story-2.png">
 </details>
+
+3. I want to personalise the game and enter my name
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Account creation | Answer "no" to "a returning user" question, type your name as a account username| Your name will be displayed later on the highscores  | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-3.png">
+</details>
