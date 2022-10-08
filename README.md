@@ -301,3 +301,22 @@ VSCode was used to write the project code using Code Institute template
 <details><summary>PEP8 check for art.py</summary>
 <img src="docs/validation/validation-art.png">
 </details>
+
+## Testing
+
+The testing approach is as follows:
+1. Manual testing of user stories
+2. Automated unit testing using the Python unittest library
+
+### Manual Testing
+<details><summary>See user stories testing</summary>
+
+1. I want to have clear options to select when prompted
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| User Input Validation | Basic yes/no selection on the linear navigation | A guide message if wrong entry | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-1.png">
+</details>
