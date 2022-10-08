@@ -371,3 +371,13 @@ The testing approach is as follows:
 <details><summary>Screenshots</summary>
 <img src="docs/testing/story-6.png">
 </details>
+
+7. I want to be able to play multiple games when I'm logged in
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Game | Answer with 'yes' to the replay question at the game end  | The game restarts for the same user | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-7.png">
+</details>
