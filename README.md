@@ -466,3 +466,36 @@ The testing approach is as follows:
 | I noticed that the API returns zero(0) population for India, resulting in a bad user experience | I adjusted the functions that create countries class instances to take manually inserted population number, if the country selected is "India" |
 | On the main() function the "keep_playing" variable was always True, resulting in an infinite while loop | I have written replay() function witch return True or False depending on the user answer, and keep_playing was assigned to it at the end of main() function |
 | An undefined variable error was returned for variables "question_return", "list_iterator" and "score" declared at the main() function scope level, when thise were accessed from other functions | I used the "global" keyword to declare those variables, making them accessible at a global scope level |
+
+## Deployment
+
+### Heroku
+This application has been deployed from GitHub to Heroku by following the steps:
+
+1. Create or log in to your account at heroku.com
+2. Create a new app, add a unique app name (this project is named "high-low-cipp3") and choose your region
+3. Click on create app
+4. Go to "Settings"
+5. Under Config Vars store any sensitive data you saved in .json file. Name 'Key' field, copy the .json file and paste it to 'Value' field. Also add a key 'PORT' and value '8000'.
+6. Add required buildpacks (further dependencies). For this project, I set up 'Python' and 'node.js' in that order.
+7. Go to "Deploy" and select "GitHub" in "Deployment method"
+8. To link up our Heroku app to our Github repository code enter your repository name, click 'Search' and then 'Connect' when it shows below
+9.  Choose the branch you want to buid your app from
+10. If prefered, click on "Enable Automatic Deploys", which keeps the app up to date with your GitHub repository
+11. Wait for the app to build. Once ready you will see the “App was successfully deployed” message and a 'View' button to take you to your deployed link.
+
+### Forking the GitHub Repository
+1. Go to the GitHub repository
+2. Click on Fork button in top right corner
+3. You will then have a copy of the repository in your own GitHub account.
+   
+### Making a Local Clone
+1. Go to the GitHub repository 
+2. Locate the Code button above the list of files and click it
+3. Highlight the "HTTPS" button to clone with HTTPS and copy the link
+4. Open Git Bash
+5. Change the current working directory to the one where you want the cloned directory
+6. Type git clone and paste the URL from the clipboard ($ git clone <span>https://</span>github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+7. Press Enter to create your local clone
+
+[Back to Table Of Contents](#table-of-contents)
