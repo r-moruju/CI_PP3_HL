@@ -443,3 +443,18 @@ The testing approach is as follows:
 </details>
 
 </details>
+
+### Automated Testing
+<details><summary>See unit testing</summary>
+
+- I wrote unit tests using Python unittest library
+- I tested separate functions to verify some simple assertions
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/unit-testing.png">
+</details>
+
+- Note: Some functions need to be rewritten to test them with unittest. For future projects write python code with unittest in mind to have easier function testing and ensure code stability
+
+
+</details>
