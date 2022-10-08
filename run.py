@@ -121,25 +121,36 @@ def main():
         print_result(score)
         keep_playing = replay()
         update_score(score)
+        top_five()
+        log_out()
 
 
-print_logo()
-LOGIN = user_account_login()
-while not LOGIN:
+def initializator():
+    """
+    The first called function
+    """
+    print_logo()
     LOGIN = user_account_login()
-main()
+    while not LOGIN:
+        LOGIN = user_account_login()
+    main()
 
-sorted_dict = height_scores()
-print_logo()
-print(col.YELLOW + "Heighscores:".center(80))
-breaker = 0
-for k, v in sorted_dict.items():
-    breaker += 1
-    if breaker == 1:
-        continue
-    print(f"{k}: {v}".center(80))
-    if breaker == 6:
-        break
+
+def top_five():
+    """
+    Print top five heighscores
+    """
+    sorted_dict = height_scores()
+    print_logo()
+    print(col.YELLOW + "Heighscores:".center(80))
+    breaker = 0
+    for k, v in sorted_dict.items():
+        breaker += 1
+        if breaker == 1:
+            continue
+        print(f"{k}: {v}".center(80))
+        if breaker == 6:
+            break
 
 
 def log_out():
@@ -151,3 +162,7 @@ def log_out():
     for num in range(4):
         time.sleep(2)
         print(".", end="")
+    initializator()
+
+
+initializator()
