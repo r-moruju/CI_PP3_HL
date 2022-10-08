@@ -320,3 +320,13 @@ The testing approach is as follows:
 <details><summary>Screenshot</summary>
 <img src="docs/testing/story-1.png">
 </details>
+
+2. I want to be able to read the rules of the game
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Game Instructions | Log in or create a new account | Users are presented with game rules | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-2.png">
+</details>
