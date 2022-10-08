@@ -361,3 +361,13 @@ The testing approach is as follows:
 <details><summary>Screenshots</summary>
 <img src="docs/testing/story-5.png">
 </details>
+
+6. I want to get a feedback after each answer
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Game | User answer a game question with yes or no | Message is displayed with the answer result | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/story-6.png">
+</details>
