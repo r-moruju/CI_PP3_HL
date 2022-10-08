@@ -499,3 +499,19 @@ This application has been deployed from GitHub to Heroku by following the steps:
 7. Press Enter to create your local clone
 
 [Back to Table Of Contents](#table-of-contents)
+
+## Credits
+
+### Code
+- [ASCII Art Generator](http://patorjk.com/software/taag/) was used to create game Logo
+- Code Institute - for git template IDE and "Love Sandwiches - Essentials Project" which helped me with connecting the Google Spreadsheet to my project, and deploy the project to Heroku.
+- [gspread documentation](https://docs.gspread.org/en/latest/user-guide.html) explained how to obtain a specific value from the google spreadsheet
+- Instructions how to print colored text from [this](https://stackabuse.com/how-to-print-colored-text-in-python/) sources
+- [Stack overflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python) code used to clear the terminal console
+- Youtube video on [How To Write Unit Tests For Existing Python Code // Part 1 of 2](https://www.youtube.com/watch?v=ULxMQ57engo&t=469s) was very helpful to understand the concept of unit tesing
+
+## Acknowledgements
+I would like to thank everyone who supported me in the development of this project:
+- My mentor Mo for professional guidance, helpful feedback and words of encouragement whilst creating the project. Also, for encouraging me to learn about the unit test and including it within this project.
+- My wife for her support and playing/testing the game with me
+- Code Institute community on Slack for resources and support
