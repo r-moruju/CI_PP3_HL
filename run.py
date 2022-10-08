@@ -130,9 +130,9 @@ def initializator():
     The first called function
     """
     print_logo()
-    LOGIN = user_account_login()
-    while not LOGIN:
-        LOGIN = user_account_login()
+    login = user_account_login()
+    while not login:
+        login = user_account_login()
     main()
 
 
