@@ -391,3 +391,13 @@ The testing approach is as follows:
 <details><summary>Screenshot</summary>
 <img src="docs/testing/story-8.png">
 </details>
+
+9. I want users to have a positive experience whilst playing the game
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Across all screen | Simple navigation and game play  | Colored messages and straightforward instructions | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/story-9.png">
+</details>
