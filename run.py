@@ -140,3 +140,14 @@ for k, v in sorted_dict.items():
     print(f"{k}: {v}".center(80))
     if breaker == 6:
         break
+
+
+def log_out():
+    """
+    Print Logging out message
+    """
+    time.sleep(2)
+    print("\n" + 33*" " + "Logging out", end="")
+    for num in range(4):
+        time.sleep(2)
+        print(".", end="")
