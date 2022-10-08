@@ -456,5 +456,13 @@ The testing approach is as follows:
 
 - Note: Some functions need to be rewritten to test them with unittest. For future projects write python code with unittest in mind to have easier function testing and ensure code stability
 
-
 </details>
+
+[Back to Table Of Contents](#table-of-contents)
+## Bugs
+
+| **Bug** | **Fix** |
+| ------- | ------- |
+| I noticed that the API returns zero(0) population for India, resulting in a bad user experience | I adjusted the functions that create countries class instances to take manually inserted population number, if the country selected is "India" |
+| On the main() function the "keep_playing" variable was always True, resulting in an infinite while loop | I have written replay() function witch return True or False depending on the user answer, and keep_playing was assigned to it at the end of main() function |
+| An undefined variable error was returned for variables "question_return", "list_iterator" and "score" declared at the main() function scope level, when thise were accessed from other functions | I used the "global" keyword to declare those variables, making them accessible at a global scope level |
