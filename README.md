@@ -431,3 +431,15 @@ The testing approach is as follows:
 <details><summary>Screenshot</summary>
 <img src="docs/testing/story-12.png">
 </details>
+
+13. I want data entry to be validated, to guide the user on how to correctly format the input
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| User Input Validation | Input something invalid | User is guided on how to correctly format the input | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-13.png">
+</details>
+
+</details>
