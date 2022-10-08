@@ -410,4 +410,14 @@ The testing approach is as follows:
 
 <details><summary>Screenshots</summary>
 <img src="docs/testing/story-10.png">
-</details
+</details>
+
+11. I want user accounts to be saved to Google Spreadsheet
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Account creation | Create a new account by entering a valid username and password | The account information is stored to Google Spreadsheet | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/story-11.png">
+</details>
