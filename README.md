@@ -350,3 +350,14 @@ The testing approach is as follows:
 <details><summary>Screenshot</summary>
 <img src="docs/testing/story-4.png">
 </details>
+
+
+5. I want to receive a real time feedback throughout the game
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Game and User Input Validation | After each user input, the program displays a relative message | feedback as an error, a confirmation, etc | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/story-5.png">
+</details>
