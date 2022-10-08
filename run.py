@@ -121,8 +121,8 @@ def main():
         print_result(score)
         keep_playing = replay()
         update_score(score)
-        top_five()
-        log_out()
+    top_five()
+    log_out()
 
 
 def initializator():
