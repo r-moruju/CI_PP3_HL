@@ -188,7 +188,7 @@ VSCode was used to write the project code using Code Institute template
 - Asks users for their passcode
 - Gives users alternative to start over and create a new account if can not remenber the passcode
 - If correct, access their data from the Google Spreadsheet
-- User stories covered: 3, 4
+- User stories covered: 4
 
 <details>
     <summary>Log-in Screenshot</summary>
@@ -339,4 +339,14 @@ The testing approach is as follows:
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/story-3.png">
+</details>
+
+4. I want to be able to log-in if I return to the game
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Log-in | Answer "Yes" to "a returning user" question  | Returning users are asked to input their username and passcode | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-4.png">
 </details>
