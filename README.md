@@ -421,3 +421,13 @@ The testing approach is as follows:
 <details><summary>Screenshots</summary>
 <img src="docs/testing/story-11.png">
 </details>
+
+12. I want the user to get feedback in case of wrong input
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| User Input Validation | Input something invalid | Feedback message displayed to the user | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-12.png">
+</details>
