@@ -401,3 +401,13 @@ The testing approach is as follows:
 <details><summary>Screenshots</summary>
 <img src="docs/testing/story-9.png">
 </details>
+
+10. I want users to easily navigate the game
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Across all screen | Simple linear navigation based on yes/no answers | Guide messages if the user has entered invalid selection | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/story-10.png">
+</details
