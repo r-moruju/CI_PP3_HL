@@ -381,3 +381,13 @@ The testing approach is as follows:
 <details><summary>Screenshot</summary>
 <img src="docs/testing/story-7.png">
 </details>
+
+8. I want to see my score
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Game | Play a game  | The score is displayed at the game end | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/story-8.png">
+</details>
