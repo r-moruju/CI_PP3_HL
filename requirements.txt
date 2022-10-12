@@ -1,5 +1,6 @@
 cachetools==5.2.0
 colorama==0.4.5
+coverage==6.5.0
 google-auth==2.11.1
 google-auth-oauthlib==0.5.3
 gspread==5.5.0
