@@ -1,3 +1,8 @@
+"""
+This module focuses on the Google Spreadsheet.
+Set the connection with Google service account.
+Manage user account creation and user log-in
+"""
 import time
 import gspread
 import pwinput
@@ -5,6 +10,7 @@ from google.oauth2.service_account import Credentials
 from colors import Color as col
 from art import print_logo
 
+# Code to connect to Google spreadsheet as in Love Sandwiches project by CI.
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",

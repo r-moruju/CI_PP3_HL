@@ -18,5 +18,5 @@ def print_logo():
     """
     Clear terminal and print logo
     """
-    print("\033c")  # Code from Stack Overflow
+    print("\033c")  # Code from Stack Overflow to clear the terminal
     print(col.YELLOW + LOGO.center(80))

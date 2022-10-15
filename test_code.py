@@ -1,3 +1,6 @@
+"""
+Code testing with unittest witch does few basic assertion
+"""
 import unittest
 from worksheet import create_new_account
 from worksheet import height_scores

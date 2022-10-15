@@ -1,3 +1,6 @@
+"""
+The main file that handle the program workflow
+"""
 import time
 import random
 from colors import Color as col

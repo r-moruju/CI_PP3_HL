@@ -1,3 +1,7 @@
+"""
+This module works with the API to get Country population
+by using requests library, and creates Class instances for each country
+"""
 import requests
 
 
