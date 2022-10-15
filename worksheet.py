@@ -51,14 +51,17 @@ def ask_for_username() -> str:
         print_logo()
         input_name = input("Type new username:\n ".center(80))
         if len(input_name) < 2 or len(input_name) > 12:
-            print(col.RED + "Username must be between 2 - 12 characters long.".center(80))
+            print(col.RED +
+                  "Username must be between 2 - 12 characters long.".center(80)
+                  )
             print(col.RED + "Please try again.\n".center(80))
             time.sleep(3)
             keep_looping = True
             continue
         for lst in accounts_list:
             if input_name == lst[0]:
-                print(col.RED + "This username already in use. Try again.".center(80))
+                print(col.RED +
+                      "This username already in use. Try again.".center(80))
                 time.sleep(3.5)
                 keep_looping = True
     print_logo()
@@ -73,9 +76,11 @@ def ask_for_passcode() -> str:
     """
     while True:
         print_logo()
-        passcode = pwinput.pwinput(prompt="Create your passcode:\n ".center(80))
+        passcode = pwinput.pwinput(prompt="Create your passcode:\n ".center(80)
+                                   )
         if len(passcode) <= 3:
-            print(col.RED + "Passcode must be longer than 3 characters".center(80))
+            print(col.RED +
+                  "Passcode must be longer than 3 characters".center(80))
             time.sleep(3)
             continue
         return passcode
@@ -93,7 +98,8 @@ def log_in_username() -> str:
             time.sleep(3)
             return False
         if user not in usernames:
-            print(col.YELLOW + f"There is no account with username {user}.".center(80))
+            print(col.YELLOW +
+                  f"There is no account with username {user}.".center(80))
             print('You can try again or type "exit" to start over.'.center(80))
             time.sleep(4)
         else:
@@ -114,12 +120,13 @@ def log_in_passcode(username: str) -> bool:
             curent_account = lst
     while True:
         print_logo()
-        existing_pass = pwinput.pwinput(prompt=f"Passcode for {username}:\n ".center(80))
-        if existing_pass == "exit":
+        code = pwinput.pwinput(prompt=f"Passcode for {username}:\n ".center(80)
+                               )
+        if code == "exit":
             print(col.RED + "Login failed.".center(80))
             time.sleep(3)
             return False
-        if existing_pass == curent_account[1]:
+        if code == curent_account[1]:
             print(col.GREEN + "Login successful.".center(80))
             time.sleep(3)
             return True
