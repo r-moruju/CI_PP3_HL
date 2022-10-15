@@ -273,7 +273,9 @@ VSCode was used to write the project code using Code Institute template
 
 ## Validation
 
-[PythonChecker](https://www.pythonchecker.com/) was used to check the code for PEP8 requirements. All code passes without significant errors
+[PythonChecker](https://www.pythonchecker.com/) was used to check the code for PEP8 requirements. All code passes without significant errors.
+
+On top of that pycodestyle validation was used inside the Gitpod workspace as recommended by CI, there was no problems apart from art.py which gives a bunch of "invalid escape sequence" warnings.
 <details><summary>PEP8 check for run.py</summary>
 <img src="docs/validation/validation-run.png">
 </details>
