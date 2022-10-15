@@ -9,6 +9,7 @@ import pwinput
 from google.oauth2.service_account import Credentials
 from colors import Color as col
 from art import print_logo
+from banned_words import validate_username
 
 # Code to connect to Google spreadsheet as in Love Sandwiches project by CI.
 SCOPE = [
@@ -70,6 +71,10 @@ def ask_for_username() -> str:
                       "This username already in use. Try again.".center(80))
                 time.sleep(3.5)
                 keep_looping = True
+                continue
+        check_username = validate_username(input_name)
+        if check_username is False:
+            keep_looping = True
     print_logo()
     print(col.BLUE + f"Welcome {input_name}.".center(80))
     time.sleep(3)
