@@ -58,7 +58,7 @@ This particular version of the game gives you the ability to create an account a
 
 ### Target Audience
 
-There is no specific audience of this game.
+The target audience is people who want to play a light game while testing their knowledge of the world's population.
 
 ### User Requirements and Expectations
 
