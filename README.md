@@ -481,7 +481,7 @@ This application has been deployed from GitHub to Heroku by following the steps:
 5. Under Config Vars store any sensitive data you saved in .json file. Name 'Key' field as 'CREDS', copy the content of .json file and paste it to 'Value' field. Also add another config var with key 'PORT' and value '8000'.
 6. Under the 'Confing Vars click on 'Add buildpack" button (further dependencies). For this project, I set up 'Python' and 'node.js' in that order.
 7. Go to "Deploy" tab and select "GitHub" in "Deployment method"
-8. To link up our Heroku app to our Github repository code enter your repository name, click 'Search' and then 'Connect' when it shows below
+8. To link up your Heroku app to our Github repository code enter your repository name, click 'Search' and then 'Connect' when it shows below
 9.  Choose the branch you want to buid your app from
 10. If prefered, click on "Enable Automatic Deploys", which keeps the app up to date with your GitHub repository
 11. Wait for the app to build. Once ready you will see the “App was successfully deployed” message and a 'View' button to take you to your deployed link.
@@ -511,6 +511,7 @@ This application has been deployed from GitHub to Heroku by following the steps:
 - Instructions how to print colored text from [this](https://stackabuse.com/how-to-print-colored-text-in-python/) sources
 - [Stack overflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python) code used to clear the terminal console
 - Youtube video on [How To Write Unit Tests For Existing Python Code // Part 1 of 2](https://www.youtube.com/watch?v=ULxMQ57engo&t=469s) was very helpful to understand the concept of unit tesing
+- [freewebheaders](https://www.freewebheaders.com/british-swear-words-list-and-bad-words-free-download/) to download the text file with british banned words
 
 ## Acknowledgements
 I would like to thank everyone who supported me in the development of this project:

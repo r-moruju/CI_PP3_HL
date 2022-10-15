@@ -30,7 +30,7 @@ usernames = [lst[0] for lst in accounts_list]
 
 def ask_if_returning_user() -> str:
     """
-    Get information for new or returning user
+    Get information for new or returning user.
     """
     print_logo()
     print(col.BLUE + "Welcome to Higher/Lower game.\n".center(80))
@@ -48,7 +48,7 @@ def ask_if_returning_user() -> str:
 
 def ask_for_username() -> str:
     """
-    Ask for username and check if it's available
+    Ask for username and check if it's available.
     """
     print("Let's create a new account for you.".center(80))
     time.sleep(3)
@@ -83,7 +83,7 @@ def ask_for_username() -> str:
 
 def ask_for_passcode() -> str:
     """
-    Create new user passcode
+    Create new user passcode.
     """
     while True:
         print_logo()
@@ -99,7 +99,7 @@ def ask_for_passcode() -> str:
 
 def log_in_username() -> str:
     """
-    Ask user to login by entering username and check if username exists
+    Ask user to login by entering username and check if username exists.
     """
     while True:
         print_logo()
@@ -123,7 +123,7 @@ def log_in_username() -> str:
 
 def log_in_passcode(username: str) -> bool:
     """
-    Ask for current user password and check if match
+    Ask for current user password and check if match.
     @param username(string): Username typed by user
     """
     for lst in accounts_list:
@@ -148,7 +148,7 @@ def log_in_passcode(username: str) -> bool:
 
 def create_new_account(name: str, passcode: str, new_score=0) -> list:
     """
-    Create a new account
+    Create a new account.
     @paran name(string): New username
     @param passcode(string): New passcode for the above username
     @param new_score(int): Gives a default zero value to populate the worksheet
@@ -160,7 +160,7 @@ def create_new_account(name: str, passcode: str, new_score=0) -> list:
 
 def upload_new_acount(lst: list):
     """
-    Update worksheet with new account
+    Update worksheet with new account.
     @param lst(list): A list to be appended as a new row to the worksheet
     """
     try:
@@ -176,7 +176,7 @@ def upload_new_acount(lst: list):
 
 def user_account_login() -> bool:
     """
-    Guide the user through login or account creation
+    Guide the user through login or account creation.
     """
     returning_player = ask_if_returning_user()
     if returning_player == "n":
@@ -198,7 +198,7 @@ def user_account_login() -> bool:
 
 def update_score(num: str):
     """
-    Push the score to Google worksheet and update the score cell
+    Push the score to Google worksheet and update the score cell.
     @param num(int): The new score to be pushed to worksheet
     """
     print_logo()
@@ -231,7 +231,7 @@ def update_score(num: str):
 def height_scores() -> dict:
     """
     Create a dictionary with usernames and their score from the worksheet
-    and sort descending by score value
+    and sort descending by score value.
     """
     updated_acc_list = accounts.get_all_values()
     top_scores = {}

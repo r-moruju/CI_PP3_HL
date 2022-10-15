@@ -8,6 +8,9 @@ f.close()
 
 
 def validate_username(username: str) -> bool:
+    """
+    Check is username is one of the banned swear words.
+    """
     if username.lower() in banned_list:
         print(col.RED + "This is a banned username. Try again.".center(80))
         time.sleep(3)
