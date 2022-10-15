@@ -150,11 +150,11 @@ VSCode was used to write the project code using Code Institute template
 - [unittest](https://docs.python.org/3/library/unittest.html) - used to carry out testing on single units in code_testing.py file
 
 #### Third Party Libraries
-- [requests](https://pypi.org/project/requests/) - Used to access the API data in a json format
-- [colorama](https://pypi.org/project/colorama/) - I used this library to add color to the terminal and enhance user experience. I marked warning/error information with color red and user feedback with blue and green
-- [pwinput](https://pypi.org/project/pwinput/) - Used to hide characters when the user enters the password
-- [gspread](https://docs.gspread.org/en/latest/) - I used gspread to add and manipulate data in my Google spreadsheet and to interact with Google APIs
-- [google.oauth2.service_account](https://google-auth.readthedocs.io/en/master/) - Module used to set up the authentification needed to access the Google API and connect my Service Account with the Credentials function. A creds.json file is created with all details the API needs to access the google account. In deployment to heroku this information is stored in the config var section.
+- [requests](https://pypi.org/project/requests/) - JUSTIFICATION: Used to access the API data in a json format
+- [colorama](https://pypi.org/project/colorama/) - JUSTIFICATION: I used this library to add color to the terminal and enhance user experience. I marked warning/error information with color red and user feedback with blue and green
+- [pwinput](https://pypi.org/project/pwinput/) - JUSTIFICATION: Used to replace characters with "*" when the user enters the password, for a better user experience
+- [gspread](https://docs.gspread.org/en/latest/) - JUSTIFICATION: I used gspread to add and manipulate data in my Google spreadsheet and to interact with Google APIs
+- [google.oauth2.service_account](https://google-auth.readthedocs.io/en/master/) - JUSTIFICATION: Module used to set up the authentification needed to access the Google API and connect my Service Account with the Credentials function. A creds.json file is created with all details the API needs to access the google account. In deployment to heroku this information is stored in the config var section.
 
 [Back to Table Of Contents](#table-of-contents)
 
@@ -477,10 +477,10 @@ This application has been deployed from GitHub to Heroku by following the steps:
 1. Create or log in to your account at heroku.com
 2. Create a new app, add a unique app name (this project is named "high-low-cipp3") and choose your region
 3. Click on create app
-4. Go to "Settings"
-5. Under Config Vars store any sensitive data you saved in .json file. Name 'Key' field, copy the .json file and paste it to 'Value' field. Also add a key 'PORT' and value '8000'.
-6. Add required buildpacks (further dependencies). For this project, I set up 'Python' and 'node.js' in that order.
-7. Go to "Deploy" and select "GitHub" in "Deployment method"
+4. Go to "Settings" tab
+5. Under Config Vars store any sensitive data you saved in .json file. Name 'Key' field as 'CREDS', copy the content of .json file and paste it to 'Value' field. Also add another config var with key 'PORT' and value '8000'.
+6. Under the 'Confing Vars click on 'Add buildpack" button (further dependencies). For this project, I set up 'Python' and 'node.js' in that order.
+7. Go to "Deploy" tab and select "GitHub" in "Deployment method"
 8. To link up our Heroku app to our Github repository code enter your repository name, click 'Search' and then 'Connect' when it shows below
 9.  Choose the branch you want to buid your app from
 10. If prefered, click on "Enable Automatic Deploys", which keeps the app up to date with your GitHub repository
